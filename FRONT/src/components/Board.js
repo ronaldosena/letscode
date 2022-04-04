@@ -40,6 +40,8 @@ const Board = () => {
     const addCardHandler = lista => async (titulo, conteudo) => {
         const newCard = { lista, titulo, conteudo };
         const savedCard = await addCard(newCard);
+        console.log("####### ", savedCard)
+        console.log("$$$$$$s ", cards)
         setCards([savedCard, ...cards]);
     }
 
@@ -53,6 +55,7 @@ const Board = () => {
     useEffect(() => {
         (async () => {
             const cs = await getCards();
+            console.log("####### ", cs)
             setCards(cs);
         })();
     }, []);

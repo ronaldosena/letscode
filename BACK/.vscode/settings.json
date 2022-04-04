@@ -1,0 +1,51 @@
+{
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 4,
+  "editor.fontFamily": "'Operator Mono Lig', 'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.suggestSelection": "first",
+  "editor.mouseWheelZoom": true,
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.multiCursorModifier": "ctrlCmd",
+  "workbench.tree.indent": 12,
+  "workbench.iconTheme": "material-icon-theme",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.zoomLevel": 0,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  // "editor.rulers": [80, 120],
+  "editor.renderLineHighlight": "all",
+  "workbench.colorTheme": "Default Dark+",
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+  "csharpfixformat.style.spaces.beforeBracket": true,
+  "csharpfixformat.style.spaces.insideEmptyBrackets": true,
+  "csharpfixformat.style.newline.atEnd": true,
+  "csharpfixformat.style.braces.onSameLine": false,
+  "csharpfixformat.style.spaces.beforeParenthesis": false,
+  "csharp.referencesCodeLens.enabled": false
+}
