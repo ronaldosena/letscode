@@ -26,12 +26,6 @@ namespace Application.Test
 
         public static void SeedSampleData(DataContext context)
         {
-            //context.Houses.AddRange(
-            //    new Card { Name = "Gryffindor" },
-            //    new Card { Name = "Hufflepuff" },
-            //    new Card { Name = "Ravenclaw" },
-            //    new Card { Name = "Slytherin" }
-            //);
 
             context.SaveChanges();
         }

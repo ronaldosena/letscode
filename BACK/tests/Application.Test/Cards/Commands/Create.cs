@@ -18,7 +18,7 @@ namespace Application.Test.Cards
                 Group = "To Do"
             };
 
-            var handler = new Application.Cards.Commands.Create.Handler(Context);
+            var handler = new Application.Cards.Commands.Create.Handler(Context, null);
 
             var result = await handler.Handle(command, CancellationToken.None);
 

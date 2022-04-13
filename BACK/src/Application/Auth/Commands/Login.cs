@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Common.Exceptions;
@@ -13,7 +14,9 @@ namespace Application.Auth.Commands
     {
         public class Command : IRequest<Dtos.Login>
         {
+            [JsonPropertyName("login")]
             public string Username { get; set; }
+            [JsonPropertyName("senha")]
             public string Password { get; set; }
         }
 

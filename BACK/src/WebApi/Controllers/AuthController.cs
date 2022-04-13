@@ -10,9 +10,10 @@ namespace WebApi.Controllers
     {
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult<Application.Auth.Dtos.Login>> Login([FromBody]Login.Command command)
+        public async Task<ActionResult<string>> Login([FromBody]Login.Command command)
         {
-            return await Mediator.Send(command);
+            var res=  await Mediator.Send(command);
+            return res.Token;
         }
     }
 }

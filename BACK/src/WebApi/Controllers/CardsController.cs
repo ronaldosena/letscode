@@ -4,6 +4,7 @@ using Application.Cards.Commands;
 using Application.Cards.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Middleware;
 
 namespace WebApi.Controllers
 {
@@ -11,9 +12,10 @@ namespace WebApi.Controllers
     public class CardsController : BaseController
     {
         [HttpPost]
-        public async Task<ActionResult<int>> Create([FromBody]Create.Command command)
+        public async Task<ActionResult<Application.Cards.Dtos.CardDto>> Create([FromBody]Create.Command command)
         {
-            return await Mediator.Send(command);
+            var res = await Mediator.Send(command);
+            return Created("/", res);
         }
 
         [HttpGet]
@@ -28,14 +30,17 @@ namespace WebApi.Controllers
             return await Mediator.Send(new Details.Query { Id = id });
         }
 
-        [HttpPut]
-        public async Task<ActionResult<Unit>> Update([FromBody]Update.Command command)
+        [HttpPut("{id}")]
+        [RequestLoggingAttribute]
+        public async Task<ActionResult<Application.Cards.Dtos.CardDto>> Update(string id, [FromBody]Update.Command command)
         {
+            command.Id = id;
             return await Mediator.Send(command);
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Unit>> Delete(int id)
+        [RequestLoggingAttribute]
+        public async Task<IEnumerable<Application.Cards.Dtos.CardDto>> Delete(string id)
         {
             return await Mediator.Send(new Delete.Command { Id = id });
         }
